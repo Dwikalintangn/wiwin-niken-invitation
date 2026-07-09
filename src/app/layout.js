@@ -13,7 +13,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Pernikahan Wiwin & Niken",
-  description: "Undangan Pernikahan Digital Wiwin & Niken - Minggu, 12 Juli 2026",
+  description:
+    "Undangan Pernikahan Digital Wiwin & Niken - Minggu, 12 Juli 2026",
 };
 
 export default function RootLayout({ children }) {

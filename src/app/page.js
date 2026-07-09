@@ -24,28 +24,23 @@ export default function Home() {
     }
   }, [isOpen]);
 
-  const websiteUrl = "https://wiwin-niken-invitation.vercel.app/";
+  const websiteUrl = "https://wiwin-niken-invitation.vercel.app";
 
-  // Memaksa pembaruan title & meta secara dinamis di sisi client agar aman dari Hydration Error
   useEffect(() => {
     document.title = "Pernikahan Wiwin & Niken";
   }, []);
 
   return (
     <main className="relative min-h-screen bg-[#FAFAFA]">
-      {/* 
-        PERBAIKAN: Tag <head> di bawah ini tetap dipertahankan untuk kebutuhan crawler static,
-        namun pastikan tidak ada bentrokan tag title/meta bawaan dari file layout.js kamu.
-      */}
       <head>
         <meta
           name="description"
-          content="Kurnia terindah dalam ikatan suci pernikahan Wiwin & Niken. Mohon doa restu kehadiran Anda."
+          content="Karunia terindah dalam ikatan suci pernikahan Wiwin & Niken. Mohon doa restu kehadiran Anda."
         />
 
         {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={websiteUrl} />
+        <meta property="og:url" content={`${websiteUrl}/`} />
         <meta property="og:title" content="Pernikahan Wiwin & Niken" />
         <meta
           property="og:description"
@@ -55,12 +50,14 @@ export default function Home() {
           property="og:image"
           content={`${websiteUrl}/images/og-image.jpg`}
         />
-        <meta property="og:image:width" content="600" />
-        <meta property="og:image:height" content="600" />
 
-        {/* Twitter */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+
+        {/* Twitter Card */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={websiteUrl} />
+        <meta property="twitter:url" content={`${websiteUrl}/`} />
         <meta property="twitter:title" content="Pernikahan Wiwin & Niken" />
         <meta
           property="twitter:description"
@@ -95,7 +92,7 @@ export default function Home() {
             <p className="text-slate-400/70 tracking-normal normal-case font-light">
               Made with ❤️ by{" "}
               <a
-                href="https://github.com/Dwikalintangn" // Ganti dengan link GitHub atau LinkedIn milikmu
+                href="https://github.com/Dwikalintangn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-sky-500 hover:text-sky-600 hover:underline transition-colors"
